@@ -4,13 +4,12 @@ import federation from "@originjs/vite-plugin-federation";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/host-app/',
   plugins: [
     react(),
     federation({
       name: "app",
       remotes: {
-        headerApp: "https://karmakiller3352.github.io/header-app/assets/remoteEntry.js",
+        headerApp: "http://localhost:5001/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom", "styled-components"],
     }),
